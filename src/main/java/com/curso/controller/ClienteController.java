@@ -31,4 +31,11 @@ public class ClienteController {
     @GetMapping("/{id}")
     public Cliente um(@PathVariable Integer id) { return clienteRepository.findById(id).get(); }
 
+
+    @DeleteMapping("/{id}")
+    public Cliente delete(@PathVariable Integer id) {
+        clienteRepository.deleteById(id);
+        return new Cliente();
+    }
+
 }
